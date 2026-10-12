@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scrapbook – Bar, Level 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<h1>The Bar, Level 1</h1>
+
+<div class="stage" id="stage">
+<svg viewBox="0 0 1190 890" role="img" aria-label="Sketch of a 1920s bar room">
+  <image href="bar-room-sketch.jpg" width="1190" height="890"/>
+  <polygon class="hot" data-msg="Blue velvet curtains gone stiff with dust. Nobody has opened them in years." points="25,235 590,28 590,430 25,680"/>
+  <circle class="hot" data-msg="A portrait in a square frame." cx="290" cy="330" r="50"/>
+  <circle class="hot" data-msg="An empty frame. Odd." cx="390" cy="265" r="52"/>
+  <circle class="hot" data-msg="A frame of faded sheet music." cx="350" cy="410" r="48"/>
+  <circle class="hot" data-msg="A tilted frame. Someone has bumped it." cx="312" cy="215" r="34"/>
+  <ellipse class="hot" data-msg="Rows of bottles, all labelled in French. None missing." cx="725" cy="350" rx="90" ry="150"/>
+  <ellipse class="hot" data-msg="More bottles. The top shelf is dusty." cx="930" cy="405" rx="100" ry="145"/>
+  <polygon class="hot" data-msg="The bar. Closed since the night everything went wrong, yet not as dusty as it should be." points="480,470 650,395 1070,545 1060,725 880,745 480,585"/>
+  <circle class="hot" data-msg="A lamp with a fringed shade. Still warm." cx="545" cy="390" r="40"/>
+  <circle class="hot" data-msg="Another lamp. The bulb is new." cx="885" cy="490" r="45"/>
+  <ellipse class="hot" data-msg="A round sofa. The cushions still hold a shape." cx="230" cy="590" rx="205" ry="150"/>
+  <circle class="hot" data-msg="A round leather stool. It swivels." cx="520" cy="545" r="42"/>
+  <circle class="hot" data-msg="A round leather stool. It swivels." cx="620" cy="575" r="42"/>
+  <circle class="hot" data-msg="A round leather stool. It swivels." cx="705" cy="610" r="42"/>
+  <circle class="hot" data-msg="A round leather stool. It swivels." cx="805" cy="650" r="42"/>
+  <ellipse class="hot" data-msg="A chalk outline. Someone cleaned up in a hurry." cx="580" cy="740" rx="130" ry="55"/>
+  <text class="pick" data-id="coin" x="745" y="672" text-anchor="middle" style="font-size:36px">🪙</text>
+  <text class="pick" data-id="ticket" x="350" y="418" text-anchor="middle" style="font-size:36px">🎟️</text>
+  <text class="pick" data-id="charm" x="250" y="580" text-anchor="middle" style="font-size:40px">🧿</text>
+  <text class="pick" data-id="teddy" x="885" y="450" text-anchor="middle" style="font-size:40px">🧸</text>
+  <text class="pick" data-id="shell" x="625" y="780" text-anchor="middle" style="font-size:36px">🐚</text>
+  <text class="pick" data-id="letter" x="290" y="345" text-anchor="middle" style="font-size:38px">✉️</text>
+</svg>
+</div>
+
+<aside class="side">
+  <button class="menu" id="menuBtn" aria-expanded="false">MENU</button>
+  <div class="drop" id="drop">
+    <p><b>Inventory</b></p><div class="inv" id="invMenu"></div>
+    <p style="margin-top:12px"><b>Settings</b></p>
+    <button class="close" id="themeBtn">Switch light / dark</button>
+    <button class="close" id="restart">Restart game</button>
+  </div>
+  <div class="zoomrow"><button class="mag" id="mag" aria-pressed="false" aria-label="Zoom">🔍</button><span>Zoom: move the cursor, click to reset</span></div>
+  <button class="cover" id="bookBtn" aria-label="Open scrapbook">
+    <h2>SCRAP<br>BOOK</h2>
+    <div class="photo">picture of parents</div>
+    <small class="prog" id="prog">0 of 6 pages filled</small>
+  </button>
+</aside>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Scrapbook">
+  <div class="book">
+    <header><h2>Scrapbook</h2><button class="close" id="closeBook">Close</button></header>
+    <p>Someone ripped these pages out. Each silhouette shows what was pasted there. Read the riddle, find the object in the bar, then drag it back onto its page. (On touch: tap the item, then tap the page.)</p>
+    <div class="slots" id="slots"></div>
+    <div class="tray"><b>Your items</b><div class="inv" id="tray"></div></div>
+    <div class="end" id="end" hidden>
+      <h2>The pages are back</h2>
+      <p>Your father kept the peace in a bar that was never just a bar. After the selkie, the regulars scattered, and vamp1, your other parent, had to leave you somewhere safe with only a scrapbook to find the way back. The photo on the cover was never a keepsake. It was an invitation. (Placeholder: edit this reveal in index.html.)</p>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="game.js"></script>
+</body>
+</html>
